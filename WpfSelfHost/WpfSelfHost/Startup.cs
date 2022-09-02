@@ -22,6 +22,7 @@ namespace WpfSelfHost
 
             // Registramos el uso del Middleware
             app.Use<SifMiddleware>();
+            app.Use<CacheMiddleware>();
             app.UseStaticFiles(@"/AppWeb");
         }
     }

@@ -1,8 +1,8 @@
 ﻿// Modelos
 var dictionary = {
     security: {
-        userLogon: "",
-        userPassword: ""
+        userLogon: "yeferson",
+        userPassword: "123456789"
     }
 };
 
