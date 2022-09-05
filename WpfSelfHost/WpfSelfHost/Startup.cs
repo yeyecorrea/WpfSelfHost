@@ -1,4 +1,5 @@
 ﻿using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Owin;
 using System;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace WpfSelfHost
             */
 
             // Registramos el uso del Middleware
+            app.UseCors(CorsOptions.AllowAll);
             app.Use<SifMiddleware>();
             app.Use<CacheMiddleware>();
             app.UseStaticFiles(@"/AppWeb");
