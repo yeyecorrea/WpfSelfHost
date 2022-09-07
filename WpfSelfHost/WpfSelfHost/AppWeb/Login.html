@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="LoginModule" ng-controller="LoginController as SIF">
+<!-- definimos el modulo y el controlador  -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+      ng-app="LoginModule" ng-controller="LoginController as SIF">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,13 +14,16 @@
 <body>
     <div class="signupFrm">
         <div class="wrapper">
+            <!-- Definimos el metodo o funcion que se ejecutara al darle en el boton de iniciar -->
             <form ng-submit="SIF.submit()" class="form">
                 <h1 class="title">Sign uP</h1>
 
                 <div class="inputContainer">
+                    <!-- Se llana ala directiva userName -->
                     <user-name></user-name>
                 </div>
                 <div class="inputContainer">
+                    <!-- Se llama a la directiva userPassword -->
                     <user-password></user-password>
                 </div>
                 <div>

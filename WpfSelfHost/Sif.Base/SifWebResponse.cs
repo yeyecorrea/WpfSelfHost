@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sif.Base
 {
+    // clase que contendra los valores de la respuesta
     public class SifWebResponse
     {
         public ServiceState State { get; set; }

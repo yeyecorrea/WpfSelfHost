@@ -14,6 +14,7 @@ namespace WpfSelfHost
     /// </summary>
     public partial class App : Application
     {
+        // La case App es el punto de partida de la aplicacion
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             // Indicamos la url
@@ -24,6 +25,7 @@ namespace WpfSelfHost
             // Indicamos la clase principal a ejecutar, en este caso Startup
             WebApp.Start<Startup>(options);
 
+            // Indicamos la ventana de WPF
             MainWindow main = new MainWindow();
             main.webBrowser.Navigate($"http://localhost:9000/AppWeb/Login.html");
             main.Show();

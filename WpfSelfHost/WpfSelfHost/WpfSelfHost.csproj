@@ -152,6 +152,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Sif.Base\Sif.Base.csproj">
+      <Project>{2B644F6B-930E-45B2-A495-F524ADAF36F9}</Project>
+      <Name>Sif.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SifBranchClient.Security\SifBranchClient.Security.csproj">
       <Project>{8d80f204-3b94-4a9f-982a-6d4cf7aeccae}</Project>
       <Name>SifBranchClient.Security</Name>

@@ -44,5 +44,11 @@
     <Compile Include="LoginBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sif.Base\Sif.Base.csproj">
+      <Project>{2B644F6B-930E-45B2-A495-F524ADAF36F9}</Project>
+      <Name>Sif.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
