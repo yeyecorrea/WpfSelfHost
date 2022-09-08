@@ -22,10 +22,10 @@ namespace WpfSelfHost
             */
 
             // Registramos el uso del Middleware
+            app.UseStaticFiles(@"/AppWeb");
             app.UseCors(CorsOptions.AllowAll);
             app.Use<SifMiddleware>();
             app.Use<CacheMiddleware>();
-            app.UseStaticFiles(@"/AppWeb");
         }
     }
 }
