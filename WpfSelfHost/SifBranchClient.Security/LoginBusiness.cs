@@ -28,7 +28,6 @@ namespace SifBranchClient.Security
                 {
                     resp.State = ServiceState.Rejected;
                 }
-
             }
             return resp;
         }

@@ -134,7 +134,9 @@
     <Content Include="AppWeb\Login.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AppWeb\Scrips\bootstrap.min.js" />
+    <Content Include="AppWeb\Scrips\bootstrap.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="AppWeb\Scrips\httpHelper.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

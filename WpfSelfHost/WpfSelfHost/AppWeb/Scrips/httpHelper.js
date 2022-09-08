@@ -1,10 +1,9 @@
-﻿//
-function webApiInvoke(productName, webapiurl, $http, $scope, successAction, rejectionAction) {
+﻿function webApiInvoke(productName, webapiurl, $http, $scope, successAction, rejectionAction) {
     // Estamos creando una referencia del controlador, que el alias es con SIF
     var SIF = $scope.SIF;
     // este metodo ejecuta el post que recibe la url del servidory  lo invocamos con parametros 
     // como el timeout de 30 por si hay demora se genere un error
-    $htt.post("http://localhost:9000/" + webapiurl,
+    $http.post("http://localhost:9000/" + webapiurl,
         { timeout: 3000, params: SIF })
         // el metodo .them vamos a validar cuando el servicio haya sido exitoso, tambien invoca el metodo
         // processWebInvoke
@@ -23,7 +22,7 @@ function processResponseWebApiInvoke(webapiurl, response, $http, $scope, success
         // o nulo
         if (response.data.State == 0) {
             if (successAction != undefined && successAction != null) {
-                succesAction.call($scope.SIF);
+                successAction.call($scope.SIF);
             }
         }
         else {

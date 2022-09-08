@@ -9,10 +9,9 @@
         console.log(this.dictionary);
         // funcion que se acciiona al presionar el boton DE INICIAR
         this.submit = function () {
-            console.log(this.dictionary);
             // se invocara el metodo que es un metodo global que exite en la libreria httpHelper
             // y le estamos pasando algunos parametros
-            webApiInvoke("security", "Login", $http, $scope, onSucces = function () {
+            webApiInvoke("security", "Login", $http, $scope, onSuccess = function () {
                 console.log("Login exitoso")
             },
             onRejected = function () {
