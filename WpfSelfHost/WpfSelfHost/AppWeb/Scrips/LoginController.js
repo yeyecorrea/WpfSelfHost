@@ -14,8 +14,10 @@
             webApiInvoke("security", "Login", $http, $scope, onSuccess = function () {
                 console.log("Login exitoso")
             },
-            onRejected = function () {
-                  console.log("Login rechazado")
+                onRejected = function () {
+                    showMessage($http, $scope, "12345", onClose = function () {
+                        console.log("Modal cerrado")
+                    }, null);
             });
         };
         // funcion que se acciiona al presionar el boton

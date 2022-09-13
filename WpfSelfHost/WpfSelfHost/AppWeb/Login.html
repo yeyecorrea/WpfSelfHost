@@ -7,10 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <link rel="stylesheet" href="style.css" />
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap.min.css.map" rel="stylesheet" />
     <script src="Scrips/angular.min.js"></script>
     <script src="Scrips/SifBranchModule.js"></script>
     <script src="Scrips/LoginController.js"></script>
     <script src="Scrips/httpHelper.js"></script>
+    <script src="Scrips/BootstrapTools.js"></script>
+    <script src="Scrips/jquery-3.6.1.min.js"></script>
 </head>
 <body>
     <div class="signupFrm">
@@ -31,7 +35,8 @@
                     <input type="submit" class="submitBtn" value="Iniciar">
                     <input type="button" class="submitBtn" value="Cancelar" ng-click="SIF.cancel()">
                 </div>
-                
+                <!-- directiva para mostrar el error -->
+                <sif-error-dialog></sif-error-dialog>
             </form>
         </div>
     </div>

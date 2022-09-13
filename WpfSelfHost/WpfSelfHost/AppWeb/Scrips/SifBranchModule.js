@@ -33,5 +33,12 @@ var dictionary = {
             templateUrl: 'components/UserPassword.html'
         };
     });
+    // directiva para mostrare un error
+    app.directive('sifErrorDialog', function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'components/Sif.errorDialog.html'
+        }
+    });
 
 })();

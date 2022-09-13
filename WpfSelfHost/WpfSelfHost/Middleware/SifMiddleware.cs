@@ -45,9 +45,7 @@ namespace WpfSelfHost.Middleware
 
                         }
                     }
-
                 }
-
                 // validamos si es Login
                 if (serviceName == "Login")
                 {
