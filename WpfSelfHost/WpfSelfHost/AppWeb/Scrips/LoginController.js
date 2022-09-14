@@ -14,7 +14,7 @@
             webApiInvoke("security", "Login", $http, $scope, onSuccess = function () {
                 console.log("Login exitoso")
             },
-                onRejected = function () {
+            onRejected = function () {
                     showMessage($http, $scope, "12345", onClose = function () {
                         console.log("Modal cerrado")
                     }, null);
