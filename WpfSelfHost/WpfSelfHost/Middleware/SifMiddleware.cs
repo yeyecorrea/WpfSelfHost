@@ -18,6 +18,8 @@ namespace WpfSelfHost.Middleware
 
         public override async Task Invoke(IOwinContext context)
         {
+            //context.Response.WriteAsync("respuesta del Middleware");
+            //await this.Next.Invoke(context);
             // Si es post
             if (context.Request.Method == "POST")
             {
@@ -37,27 +39,28 @@ namespace WpfSelfHost.Middleware
 
                         JsonSerializerSettings settings = new JsonSerializerSettings();
                         settings.NullValueHandling = NullValueHandling.Ignore;
-                    
-                        SifWebResponse resp = new SifWebResponse();
-
-                        // validamos si es Login
-                        if (serviceName == "Login")
+                        Container = JsonConvert.DeserializeObject<DataDictionaryContainer>(data, settings);
+                        if (Container.ParametersList != null)
                         {
-                            Container = JsonConvert.DeserializeObject<DataDictionaryContainer>(data, settings);
-                            if (Container.ParametersList != null)
+                            // validamos si es Login
+                            if (serviceName == "Login")
                             {
                                 dataDictionary = Container.ParametersList.Dictionary;
-                                SifBranchClient.Security.LoginBusiness login =
-                                    new SifBranchClient.Security.LoginBusiness();
+                                // creamos una instancia de la clase LoginBussinees el cual contiene el metodo procces, logica de canal
+                                SifBranchClient.Security.LoginBusiness login = new SifBranchClient.Security.LoginBusiness();
+                                // la variable resp es de tipo SifWebResponse, el cual le pasamo lo que retonrla el metodo procces
+                                // que es un  ServiceState.Accepted
                                 login.Dictionary = dataDictionary;
-                                resp = login.Procces();
+                                SifWebResponse resp = login.Procces();
+
+                                // convertimos esa respuest en un json
+                                SifMiddleware.WriteResponse(context, "application/json", JsonConvert.SerializeObject(resp));
                             }
                         }
                     }
-                }
 
+                }
             }
-            await this.Next.Invoke(context);
         }
         // medoto que escribe la respuesta que se envia al cliente
         internal static void WriteResponse(IOwinContext context, String contentType, String body)
@@ -77,12 +80,13 @@ namespace WpfSelfHost.Middleware
                 {
                     bodyStream.Write(bytes, 0, bytes.Length);
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
 
                 }
                 bodyStream.Flush();
             }
+
         }
     }
 }
