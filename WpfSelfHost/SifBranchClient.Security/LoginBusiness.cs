@@ -17,12 +17,10 @@ namespace SifBranchClient.Security
             SifWebResponse resp = new SifWebResponse();
             if (this.Dictionary != null)
             {
-                if (this.Dictionary.Security.UserLogon == "yeferson")
+                if (this.Dictionary.Security.UserLogon == "yeferson"
+                    && this.Dictionary.Security.UserPassword == "123456789")
                 {
-                    if (this.Dictionary.Security.UserPassword == "123456789")
-                    {
-                        resp.State = ServiceState.Accepted;
-                    }
+                    resp.State = ServiceState.Accepted;
                 }
                 else
                 {
