@@ -115,9 +115,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="AppWeb\bootstrap.min.css.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,7 +146,7 @@
     <Content Include="AppWeb\Scrips\httpHelper.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AppWeb\Scrips\jquery-3.6.1.min.js">
+    <Content Include="AppWeb\Scrips\jquery-3.6.0.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="AppWeb\Scrips\LoginController.js">
